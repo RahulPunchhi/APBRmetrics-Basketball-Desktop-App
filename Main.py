@@ -102,10 +102,11 @@ for x in range(0, len(nba_team_name)):
     labels = 'Wins', 'Losses'
     fracs = [((nba_team_data[x])[0]), ((nba_team_data[x])[1])]
 
-    plt.title((nba_team_data[x])[7] + " " + prev_year_val + "-" + current_year_val + " NBA Team Stats")
-    plt.pie(fracs, labels=labels, shadow=True, autopct='%1.1f%%')
-    team_pie_name = 'team_win_loss_pie'+(nba_team_data[x])[7]
-    plt.savefig(team_pie_name)
+    plt.title((nba_team_data[x])[7] + " " + prev_year_val + "-" + current_year_val + " NBA Team Stats", color='white')
+    plt.pie(fracs, labels=labels, shadow=True, autopct='%1.1f%%', textprops={'color': "w"})
+
+    team_pie_name = 'team_win_loss_pie' + (nba_team_data[x])[7]
+    plt.savefig(team_pie_name, transparent=True)
     plt.clf()
     builderStringVal += "<%s>:" \
                             "\n\tFloatLayout:" \
